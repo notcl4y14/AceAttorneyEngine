@@ -1,0 +1,61 @@
+<style>
+	/* https://stackoverflow.com/a/65600/22146374 */
+	div#message-box {
+		position: relative;
+
+		background-color: rgba(0, 0, 0, 0.5);
+
+		border-color: black;
+		border-width: 5px;
+		border-style: solid;
+		
+		height: 100px;
+
+		word-wrap: break-word;
+		overflow: overlay;
+	}
+
+	p#message-box-text {
+		color: white;
+		padding: 10px;
+		margin: 0px;
+	}
+
+	div#message-box-speaker-box {
+		background-color: blue;
+		border-color: black;
+		border-width: 5px;
+		border-style: solid;
+
+		width: 100px;
+		height: 20px;
+	}
+
+	p#message-box-speaker {
+		color: white;
+		margin: 0px;
+	}
+
+	p#message-box-arrow {
+		position: absolute;
+		visibility: hidden;
+		color: white;
+		margin: 0px;
+		right: 10px;
+		bottom: 10px;
+		/* margin-right: 10px; */
+		/* margin-bottom: 10px; */
+		/* padding-right: 10px; */
+		/* padding-bottom: 10px; */
+		/* float: right; */
+		/* padding-right: 10px; */
+	}
+</style>
+<div id="message-box-speaker-box">
+	<p id="message-box-speaker"></p>
+</div>
+<div id="message-box">
+	<p id="message-box-text"></p>
+	<p id="message-box-arrow">></p>
+</div>
+<script type="module" src="main.js"></script>
