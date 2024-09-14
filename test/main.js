@@ -1,24 +1,25 @@
 import DialogBox from "../source/DialogBox.js";
 
-DialogBox.htmlBox = document.getElementById("message-box");
-DialogBox.htmlText = document.getElementById("message-box-text");
-DialogBox.htmlSpeaker = document.getElementById("message-box-speaker");
+const dialogBox = new DialogBox();
 
-DialogBox.show("AAAAeaeaeae", "E");
-// DialogBox.show("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "AAAAAAAAAAAAAAA");
+dialogBox.htmlBox = document.getElementById("message-box");
+dialogBox.htmlText = document.getElementById("message-box-text");
+dialogBox.htmlSpeaker = document.getElementById("message-box-speaker");
+
+dialogBox.show("AAAAeaeaeae", "E");
 
 function onDone() {
 	document.getElementById("message-box-arrow").style.visibility = "visible";
 }
 
 async function step(ms) {
-	if (DialogBox.isDone) {
+	if (dialogBox.isDone) {
 		onDone();
 		return;
 	}
 
-	DialogBox.advance();
-	DialogBox.update();
+	dialogBox.advance();
+	dialogBox.update();
 
 	setTimeout(step, ms, ms);
 }

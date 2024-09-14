@@ -1,36 +1,36 @@
 export default class DialogBox {
 
-	static message = "";
-	static speaker = "";
-	static visible = false;
+	message = "";
+	speaker = "";
+	visible = false;
 
-	static index = 0;
+	index = 0;
 
-	static htmlSpeaker = null;
-	static htmlText = null;
-	static htmlBox = null;
+	htmlSpeaker = null;
+	htmlText = null;
+	htmlBox = null;
 
-	static get isDone () {
+	get isDone () {
 		return this.index >= this.message.length;
 	}
 
-	static get messageOut () {
+	get messageOut () {
 		return this.message.substring(0, this.index);
 	}
 
-	static show(message, speaker) {
+	show (message, speaker) {
 		this.message = message;
 		this.speaker = speaker;
 		this.visible = true;
 		this.index = 0;
 	}
 
-	static advance() {
+	advance () {
 		this.index += 1;
 	}
 
 	// HTML
-	static update() {
+	update () {
 		this.htmlBox.style.visibility = this.visible
 			? "visible" : "hidden";
 		this.htmlSpeaker.innerHTML = this.speaker;
@@ -38,12 +38,12 @@ export default class DialogBox {
 	}
 
 	// Canvas
-	static drawBox(context, x, y, width, height) {
+	drawBox (context, x, y, width, height) {
 		context.fillStyle = "#000000";
 		context.fillRect(x, y, width, height);
 	}
 
-	static drawText(context, text, x, y) {
+	drawText (context, text, x, y) {
 		context.fillStyle = "#ffffff";
 		context.fillText(text, x, y);
 	}
