@@ -29,6 +29,11 @@ export default class DialogBox {
 		this.index += 1;
 	}
 
+	step () {
+		this.advance();
+		this.update();
+	}
+
 	// HTML
 	update () {
 		this.htmlBox.style.visibility = this.visible

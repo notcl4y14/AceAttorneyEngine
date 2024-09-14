@@ -18,8 +18,7 @@ async function step(ms) {
 		return;
 	}
 
-	dialogBox.advance();
-	dialogBox.update();
+	dialogBox.step();
 
 	setTimeout(step, ms, ms);
 }
