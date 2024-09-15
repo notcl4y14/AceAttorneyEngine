@@ -18,7 +18,7 @@ export default class DialogBox {
 		return this.message.substring(0, this.index);
 	}
 
-	show (message, speaker) {
+	show (speaker, message) {
 		this.message = message;
 		this.speaker = speaker;
 		this.visible = true;
